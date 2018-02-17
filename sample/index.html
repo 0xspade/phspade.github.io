@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<head>
+		<title>foobar</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0; 
+			}
+			body{
+				width: 100%;
+				background: #1c1c1c;
+			}
+			#preloader{
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				padding-top: 20%;
+				background: #f2f2f3;
+				z-index: 1
+			}
+			#preloader h1{
+				text-align: center;
+			}
+			#animation{
+				z-index: 0;
+				height: 10000px;
+				margin: 5% auto;
+				width: 750px;
+			}
+			img{
+				width: 50%;
+				border: 3px solid cornflowerblue;
+				border-radius: 15px;
+				position: fixed;
+			}
+			.title{
+				position: fixed;
+				color: white;
+				width: 50%;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="preloader">
+			<h1>Loading . . .</h1>
+		</div>
+		
+		<div id="animation">
+			<h2 class="title">Spade's Scroll Animation</h2><br><br><br>
+			<img class="sequencer" src="pwet/1.png">
+		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    	<script type="text/javascript" src="jquery-sequencer.min.js"></script>
+    	<script>
+    		$('#animation').sequencer({
+    			count: 300,
+        		path: "./pwet",
+        		ext: "png"
+    		}, function(){
+    			$('#preloader').hide();
+    		});
+    	</script>
+	</body>
+</html>
